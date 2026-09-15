@@ -1,0 +1,4 @@
+-- insert into member(email,name) values ("aaa@gmail.com","홍길동");
+-- insert into member(email,name) values ("b@gmail.com","김길동");
+-- insert into member(email,name) values ("c@gmail.com","박길동");
+-- insert into member(email,name) values ("d@gmail.com","최길동");
