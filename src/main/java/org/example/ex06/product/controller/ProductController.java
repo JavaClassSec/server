@@ -41,4 +41,9 @@ public class ProductController {
     public Product updateProduct(@RequestBody UpdatePostRequest request){
         return productService.updateProduct(request);
     }
+
+    @PutMapping
+    public Product putProduct(@RequestBody UpdatePostRequest request){
+        return productService.updateProduct(request);
+    }
 }

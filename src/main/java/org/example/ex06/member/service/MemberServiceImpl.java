@@ -6,12 +6,13 @@ import org.example.ex06.member.dto.request.UpdateMemberRequest;
 import org.example.ex06.member.entity.Member;
 import org.example.ex06.member.repository.MemberRepository;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.RollbackOn;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 @Service
-@Transactional
+@Transactional(rollbackFor = Exception.class)
 @RequiredArgsConstructor
 public class MemberServiceImpl implements MemberService {
 

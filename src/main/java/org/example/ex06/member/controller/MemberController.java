@@ -41,4 +41,7 @@ public class MemberController {
     public Member updateMember(@RequestBody UpdateMemberRequest request) {
         return memberService.updateMember(request);
     }
+
+    @PutMapping
+    public Member updateMember2(@RequestBody UpdateMemberRequest request) { return memberService.updateMember(request); }
 }
