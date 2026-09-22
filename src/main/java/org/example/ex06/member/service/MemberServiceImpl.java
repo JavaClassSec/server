@@ -43,7 +43,8 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void deleteMember(Long id) {
-        Member member = memberRepository.findById(id).orElseThrow(
+        Member member = memberRepository.findById(id)
+                .orElseThrow(
                 () -> new IllegalArgumentException("없는 멤버")
         );
 

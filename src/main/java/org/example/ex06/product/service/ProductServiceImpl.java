@@ -36,7 +36,8 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProduct(Long id) {
-        Product product = productRepository.findById(id).orElseThrow(
+        Product product = productRepository.findById(id)
+                .orElseThrow(
                 () -> new IllegalArgumentException("없는 상품")
         );
 
