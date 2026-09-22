@@ -6,7 +6,6 @@ import org.example.ex06.member.dto.request.UpdateMemberRequest;
 import org.example.ex06.member.entity.Member;
 import org.example.ex06.member.repository.MemberRepository;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.RollbackOn;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
@@ -44,7 +43,11 @@ public class MemberServiceImpl implements MemberService {
 
     @Override
     public void deleteMember(Long id) {
-        memberRepository.deleteById(id);
+        Member member = memberRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("없는 멤버")
+        );
+
+        memberRepository.delete(member);
     }
 
     @Override

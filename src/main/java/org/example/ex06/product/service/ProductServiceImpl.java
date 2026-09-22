@@ -36,7 +36,11 @@ public class ProductServiceImpl implements ProductService {
 
     @Override
     public void deleteProduct(Long id) {
-        productRepository.deleteById(id);
+        Product product = productRepository.findById(id).orElseThrow(
+                () -> new IllegalArgumentException("없는 상품")
+        );
+
+        productRepository.delete(product);
     }
 
     @Override
